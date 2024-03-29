@@ -30,8 +30,8 @@ pipeline{
             steps{
                 withBuildConfiguration {
                     sshagent(credentials: [SSH_ID_REF]) {
-                        ssh root@ec2-18-141-234-249.ap-southeast-1.compute.amazonaws.com "docker run --detach --name lab2 -p 1612:8000 hoangdat1612/lab2_create_docker_image:latest"
-                        ssh root@ec2-18-142-231-213.ap-southeast-1.compute.amazonaws.com "docker run --detach --name lab2 -p 1612:8000 hoangdat1612/lab2_create_docker_image:latest"
+                        ssh root@ec2-18-141-234-249.ap-southeast-1.compute.amazonaws.com 'docker run --detach --name lab2 -p 1612:8000 hoangdat1612/lab2_create_docker_image:latest'
+                        ssh root@ec2-18-142-231-213.ap-southeast-1.compute.amazonaws.com 'docker run --detach --name lab2 -p 1612:8000 hoangdat1612/lab2_create_docker_image:latest'
                     }
                 }
             }
