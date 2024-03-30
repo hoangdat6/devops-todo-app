@@ -1,10 +1,13 @@
+#!/usr/bin/env groovy
+
+import groovy.transform.Field
+
+@Field
+String DOCKER_USER_REF = 'c1bd90fb-6e38-4359-9d67-1ab08e3d360f'
+@Field
+String SSH_ID_REF = 'fff43255-9a75-4f15-8e54-ffd74f2c440c'
 pipeline{
     agent any
-
-    environment {
-        DOCKER_USER_REF = 'c1bd90fb-6e38-4359-9d67-1ab08e3d360f'
-        SSH_ID_REF = 'fff43255-9a75-4f15-8e54-ffd74f2c440c'
-    }
 
     tools {
         dockerTool 'docker'
