@@ -33,7 +33,7 @@ pipeline{
             steps{
                 withBuildConfiguration {
                     sshagent(credentials: [SSH_ID_REF]) {
-                        sh 'ssh root@103.82.135.237 "docker run --detach --name lab2 -p 1612:8000 hoangdat1612/lab2_create_docker_image:latest"'
+                        sh 'ssh root@sendbulker.com "docker run --detach --name lab2 -p 1612:8000 hoangdat1612/lab2_create_docker_image:latest"'
                         // sh 'ssh root@ec2-18-142-231-213.ap-southeast-1.compute.amazonaws.com "docker run --detach --name lab2 -p 1612:8000 hoangdat1612/lab2_create_docker_image:latest"'
                     }
                 }
