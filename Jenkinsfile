@@ -33,12 +33,8 @@ pipeline{
             steps{
                 withBuildConfiguration {
                     sshagent(credentials: [SSH_ID_REF]) {
-                        // sh 'ssh root@sendbulker.com "docker run --detach --name lab2 -p 1612:8000 hoangdat1612/lab2_create_docker_image:latest"'
-                        // // sh 'ssh root@ec2-18-142-231-213.ap-southeast-1.compute.amazonaws.com "docker run --detach --name lab2 -p 1612:8000 hoangdat1612/lab2_create_docker_image:latest"'
-                        sh '''
-                        docker run -d --rm --name todo-app_dat -p 1612:8000 vitnguyen/mgm-training-todo-app:0.0.3
-                        docker ps
-                        '''
+                        sh 'ssh root@ec2-18-142-136-126.ap-southeast-1.compute.amazonaws.com "docker run --detach --name lab2 -p 1612:8000 hoangdat1612/lab2_create_docker_image:latest"'
+                        // sh 'ssh root@ec2-18-143-167-76.ap-southeast-1.compute.amazonaws.com "docker run --detach --name lab2 -p 1612:8000 hoangdat1612/lab2_create_docker_image:latest"'
                     }
                 }
             }
