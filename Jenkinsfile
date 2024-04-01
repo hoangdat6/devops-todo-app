@@ -6,6 +6,7 @@ import groovy.transform.Field
 String DOCKER_USER_REF = 'b51bb93e-844f-409a-be1e-3ab7748c2e8b'
 @Field
 String SSH_ID_REF = 'ssh-credentials-id'
+
 pipeline{
     agent any
 
@@ -33,7 +34,7 @@ pipeline{
             steps{
                 withBuildConfiguration {
                     sshagent(credentials: [SSH_ID_REF]) {
-                        sh 'ssh root@ec2-18-142-136-126.ap-southeast-1.compute.amazonaws.com "docker run --detach --name lab2 -p 1612:8000 hoangdat1612/lab2_create_docker_image:latest"'
+                        sh 'ssh root@ec2-18-143-167-76.ap-southeast-1.compute.amazonaws.com "docker run --detach --name lab2_dat -p 1612:8000 hoangdat1612/lab2_create_docker_image:latest"'
                         // sh 'ssh root@ec2-18-143-167-76.ap-southeast-1.compute.amazonaws.com "docker run --detach --name lab2 -p 1612:8000 hoangdat1612/lab2_create_docker_image:latest"'
                     }
                 }
