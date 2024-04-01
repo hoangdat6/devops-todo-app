@@ -5,7 +5,7 @@ import groovy.transform.Field
 @Field
 String DOCKER_USER_REF = 'b51bb93e-844f-409a-be1e-3ab7748c2e8b'
 @Field
-String SSH_ID_REF = '	ssh-credentials-id'
+String SSH_ID_REF = 'ssh-credentials-id'
 pipeline{
     agent any
 
