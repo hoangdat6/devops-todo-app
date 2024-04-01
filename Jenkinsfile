@@ -5,7 +5,7 @@ import groovy.transform.Field
 @Field
 String DOCKER_USER_REF = 'b51bb93e-844f-409a-be1e-3ab7748c2e8b'
 @Field
-String SSH_ID_REF = 'ssh-mykey'
+String SSH_ID_REF = '	ssh-credentials-id'
 pipeline{
     agent any
 
@@ -36,7 +36,7 @@ pipeline{
                         // sh 'ssh root@sendbulker.com "docker run --detach --name lab2 -p 1612:8000 hoangdat1612/lab2_create_docker_image:latest"'
                         // // sh 'ssh root@ec2-18-142-231-213.ap-southeast-1.compute.amazonaws.com "docker run --detach --name lab2 -p 1612:8000 hoangdat1612/lab2_create_docker_image:latest"'
                         sh '''
-                        docker run -d --rm --name todo-app -p 8000:8000 hoangdat1612/lab2_create_docker_image:latest
+                        docker run -d --rm --name todo-app -p 8000:8000 vitnguyen/mgm-training-todo-app:0.0.3
                         docker ps
                         '''
                     }
