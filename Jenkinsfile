@@ -34,7 +34,7 @@ pipeline{
             steps{
                 withBuildConfiguration {
                     sshagent(credentials: [SSH_ID_REF]) {
-                        sh 'ssh -o StrictHostKeyChecking=no root@ec2-18-143-167-76.ap-southeast-1.compute.amazonaws.com "docker run --detach --name lab2_dat -p 1612:8000 hoangdat1612/lab2_create_docker_image:latest"'
+                        sh 'ssh -o StrictHostKeyChecking=no root@103.173.66.172 "docker run --detach --name lab2_dat -p 1612:8000 hoangdat1612/lab2_create_docker_image:latest"'
                         // sh 'ssh root@ec2-18-143-167-76.ap-southeast-1.compute.amazonaws.com "docker run --detach --name lab2 -p 1612:8000 hoangdat1612/lab2_create_docker_image:latest"'
                     }
                 }
