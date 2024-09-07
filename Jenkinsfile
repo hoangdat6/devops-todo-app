@@ -29,9 +29,7 @@ pipeline {
         stage('deploy') {
             steps {
                 withBuildConfiguration {
-                    sshagent(credentials: [SSH_ID_REF]) {
-                        sh 'docker run --detach --name lab2_dat -p 1612:8000 hoangdat1612/lab2_create_docker_image:latest'
-                    }
+                    sh 'docker run --detach --name lab2_dat -p 1612:8000 hoangdat1612/lab2_create_docker_image:latest'
                 }
             }
         }
